@@ -12,12 +12,10 @@ jdk:
   - oraclejdk7
   - oraclejdk8
 
-before_install:
-  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-
 script: travis_retry sbt ++$TRAVIS_SCALA_VERSION clean test
 
 after_success:
+  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
   - sbt docker:stage
   - docker build -t divanvisagie/lazy-places target/docker/stage
   - docker push divanvisagie/lazy-places
