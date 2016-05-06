@@ -8,3 +8,6 @@ sbt-ui.sbt
 classes/
 target/
 sbt-launch.jar
+.ensime
+.project
+.ensime_cache
