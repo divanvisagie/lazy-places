@@ -9,8 +9,6 @@ scala:
 
 jdk:
   - openjdk7
-  - oraclejdk7
-  - oraclejdk8
 
 before_install:
   - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
