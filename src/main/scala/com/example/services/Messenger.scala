@@ -1,9 +1,14 @@
 package com.example.services
 
+import com.example.models.SystemMessage
 import com.rabbitmq.client.{Channel, Connection, ConnectionFactory}
+import org.json4s.NoTypeHints
+import org.json4s.native.Serialization
+import org.json4s.native.Serialization.write
 
 class Messenger {
   private val QUEUE_NAME: String = "places"
+  implicit val formats = Serialization.formats(NoTypeHints)
 
 
   def send(message: String) : Unit = {
@@ -15,11 +20,14 @@ class Messenger {
 
     channel.queueDeclare(QUEUE_NAME, false, false, false, null)
     channel.basicPublish("", QUEUE_NAME, null, message.getBytes())
-    System.out.println(" [x] Sent '" + message + "'")
 
 
     channel.close()
     connection.close()
+  }
+
+  def send(message: SystemMessage): Unit = {
+    send(write(message))
   }
 
 }
