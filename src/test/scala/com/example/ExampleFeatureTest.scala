@@ -16,4 +16,20 @@ class ExampleFeatureTest extends FeatureTest {
         withBody = "pong")
     }
   }
+
+  "Server" should {
+    "Say Location updated for Post" in {
+      server.httpPost(
+        path = "/location",
+        postBody =
+          """
+          {
+            "lat": 10,
+            "lng" : 10
+          }
+          """,
+        andExpect = Ok,
+        withBody = "Location updated")
+    }
+  }
 }
