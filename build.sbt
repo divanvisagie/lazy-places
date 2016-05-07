@@ -13,7 +13,8 @@ javaOptions ++= Seq(
 
 resolvers ++= Seq(
   Resolver.sonatypeRepo("releases"),
-  "Twitter Maven" at "https://maven.twttr.com")
+  "Twitter Maven" at "https://maven.twttr.com"
+)
 
 lazy val versions = new {
   val finatra = "2.1.4"
@@ -49,5 +50,6 @@ libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % versions.scalatest % "test",
   "org.specs2" %% "specs2" % versions.specs2 % "test",
   "org.json4s" % "json4s-native_2.11" % "3.3.0",
-  "com.typesafe.akka" %% "akka-actor" % "2.3.11"
+  "com.typesafe.akka" %% "akka-actor" % "2.3.11",
+  "com.rabbitmq" % "amqp-client" % "3.6.1"
 )

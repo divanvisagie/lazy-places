@@ -2,8 +2,8 @@ package com.example.actors
 
 import akka.actor.{Actor, Props}
 import akka.event.Logging
-import com.example.HttpService
 import com.example.models.{Location, PlaceListResult}
+import com.example.services.HttpService
 
 class PlaceFinder  {
   var httpService = HttpService()
