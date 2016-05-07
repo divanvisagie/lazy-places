@@ -1,4 +1,4 @@
-name := """finatra-http-seed"""
+name := """lazy-places"""
 organization := "com.example"
 
 version := "1.0.0-SNAPSHOT"

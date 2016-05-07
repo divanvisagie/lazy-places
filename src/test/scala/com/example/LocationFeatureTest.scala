@@ -4,7 +4,7 @@ import com.twitter.finagle.http.Status.Ok
 import com.twitter.finatra.http.test.EmbeddedHttpServer
 import com.twitter.inject.server.FeatureTest
 
-class ExampleFeatureTest extends FeatureTest {
+class LocationFeatureTest extends FeatureTest {
 
   override val server = new EmbeddedHttpServer(new ExampleServer)
 
@@ -24,8 +24,8 @@ class ExampleFeatureTest extends FeatureTest {
         postBody =
           """
           {
-            "lat": 10,
-            "lng" : 10
+            "lat": 31.004804799999988,
+            "lng" : -29.838440499999997
           }
           """,
         andExpect = Ok,
