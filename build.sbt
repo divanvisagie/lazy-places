@@ -48,5 +48,6 @@ libraryDependencies ++= Seq(
   "org.mockito" % "mockito-core" % versions.mockito % "test",
   "org.scalatest" %% "scalatest" % versions.scalatest % "test",
   "org.specs2" %% "specs2" % versions.specs2 % "test",
-  "org.json4s" % "json4s-native_2.11" % "3.3.0"
+  "org.json4s" % "json4s-native_2.11" % "3.3.0",
+  "com.typesafe.akka" %% "akka-actor" % "2.3.11"
 )

@@ -1,21 +1,17 @@
 package com.example
 
+import com.example.actors.SystemActor
 import com.example.models._
+import akka.actor.ActorSystem
 
 
 class PlacesService {
-  var httpService = HttpService()
-  def getPlacesForLocation(location: Location): PlaceListResult = {
 
-    val radius = 500
-    val urlMidsection = s"/maps/api/place/nearbysearch/json?location=${location.toString}&radius=$radius&type=restaurant"
+  val system = ActorSystem("place-service-system")
+  val systemActor = system.actorOf(SystemActor.props, "systemActor")
 
-    val placeListResult = httpService.get[PlaceListResult](urlMidsection)
-    placeListResult
-  }
-
-  def processResult(placeListResult: PlaceListResult) = {
-
+  def processLocation(location: Location) = {
+    systemActor ! location
   }
 }
 
