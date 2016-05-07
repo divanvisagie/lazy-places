@@ -5,6 +5,9 @@
 
 Lazily get places from around an area based on gps location
 
+## Design
+
+[![Diagram](documentation/lazy-places-diagram.svg)](https://drive.google.com/file/d/0B4_rnYwGIwrVbXlpRUlJaGlHN2M/view?usp=sharing)
 
 ## Development Setup
 
