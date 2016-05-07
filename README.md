@@ -1,7 +1,7 @@
 # Lazy Places
 
 [![Build Status](https://travis-ci.org/divanvisagie/lazy-places.svg?branch=master)](https://travis-ci.org/divanvisagie/lazy-places)
-![Docker Pulls](https://img.shields.io/docker/pulls/divanvisagie/lazy-places.svg)
+[![Docker Pulls](https://img.shields.io/docker/pulls/divanvisagie/lazy-places.svg?maxAge=2592000)](https://hub.docker.com/r/divanvisagie/lazy-places)
 
 Lazily get places from around an area based on gps location
 
