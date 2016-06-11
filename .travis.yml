@@ -11,6 +11,9 @@ jdk:
   # - openjdk7
   - oraclejdk7
   - oraclejdk8
+  
+before_script:
+  - curl -L -o coursier https://git.io/vgvpD && chmod +x coursier
 
 script: travis_retry sbt ++$TRAVIS_SCALA_VERSION clean test
 
