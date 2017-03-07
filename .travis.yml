@@ -5,15 +5,10 @@ services:
   - docker
 
 scala:
-  - 2.11.7
+  - 2.11.8
 
 jdk:
-  # - openjdk7
-  - oraclejdk7
-  - oraclejdk8
-  
-before_script:
-  - curl -L -o coursier https://git.io/vgvpD && chmod +x coursier
+  - openjdk8
 
 script: travis_retry sbt ++$TRAVIS_SCALA_VERSION clean test
 

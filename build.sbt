@@ -1,9 +1,12 @@
+import com.typesafe.sbt.packager.docker._
+
+
 name := """lazy-places"""
-organization := "com.example"
+organization := "com.dvisagie"
 
-version := "1.0.0-SNAPSHOT"
+version := "1.0.1"
 
-scalaVersion := "2.11.7"
+scalaVersion := "2.11.8"
 
 fork in run := true
 
@@ -17,15 +20,30 @@ resolvers ++= Seq(
 )
 
 lazy val versions = new {
-  val finatra = "2.1.4"
-  val guice = "4.0"
-  val logback = "1.0.13"
-  val mockito = "1.9.5"
-  val scalatest = "2.2.3"
-  val specs2 = "2.3.12"
+  val akka = "2.3.16"
+  val finatra = "2.1.6"
+  val guice = "4.1.0"
+  val logback = "1.2.1"
+  val mockito = "2.7.14"
+  val scalatest = "3.0.1"
+  val specs2 = "3.3.1"
+  val rabbit = "4.1.0"
+  val json4s = "3.5.0"
 }
 
 enablePlugins(JavaServerAppPackaging)
+packageName in Docker := "divanvisagie/lazy-places"
+dockerCommands += Cmd("RUN","apk add --no-cache bash")
+dockerCommands := Seq(
+  Cmd("FROM", "openjdk:alpine"),
+  Cmd("WORKDIR", "/opt/docker"),
+  Cmd("ADD", "opt /opt"),
+  ExecCmd("RUN" , "chown", "-R", "daemon:daemon", "." ),
+  ExecCmd("RUN", "apk", "add", "--no-cache", "bash"),
+  Cmd("EXPOSE", "5000"),
+  ExecCmd("ENTRYPOINT", "bin/lazy-places")
+)
+
 
 libraryDependencies ++= Seq(
   "com.twitter.finatra" %% "finatra-http" % versions.finatra,
@@ -49,7 +67,7 @@ libraryDependencies ++= Seq(
   "org.mockito" % "mockito-core" % versions.mockito % "test",
   "org.scalatest" %% "scalatest" % versions.scalatest % "test",
   "org.specs2" %% "specs2" % versions.specs2 % "test",
-  "org.json4s" % "json4s-native_2.11" % "3.3.0",
-  "com.typesafe.akka" %% "akka-actor" % "2.3.11",
-  "com.rabbitmq" % "amqp-client" % "3.6.1"
+  "org.json4s" % "json4s-native_2.11" % versions.json4s,
+  "com.typesafe.akka" %% "akka-actor" % versions.akka,
+  "com.rabbitmq" % "amqp-client" % versions.rabbit
 )
