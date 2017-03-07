@@ -1,6 +1,6 @@
-package com.example.services
+package com.dvisagie.services
 
-import com.example.ApiSettings
+import com.dvisagie.ApiSettings
 import org.json4s.NoTypeHints
 import org.json4s.native.Serialization
 import org.json4s.native.Serialization.read

@@ -1,6 +1,6 @@
-package com.example.services
+package com.dvisagie.services
 
-import com.example.models.SystemMessage
+import com.dvisagie.models.SystemMessage
 import com.rabbitmq.client.{Channel, Connection, ConnectionFactory}
 import org.json4s.NoTypeHints
 import org.json4s.native.Serialization

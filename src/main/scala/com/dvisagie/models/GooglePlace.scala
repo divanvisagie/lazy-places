@@ -1,8 +1,8 @@
-package com.example.models
+package com.dvisagie.models
 
 
 class Location(val lat: Double, val lng: Double) {
-  override def toString = {
+  override def toString: String = {
     s"$lat,$lng"
   }
 }
@@ -10,7 +10,7 @@ object Location{
   def apply(lat: Double,lng: Double) = new Location(lat,lng)
 }
 
-case class Geometry(val location: Location)
+case class Geometry(location: Location)
 
 class Photo(
   val width: Int,

@@ -1,8 +1,4 @@
-package com.example.models
-
-/**
-  * Created by divan on 2016/05/07.
-  */
+package com.dvisagie.models
 
 trait SystemMessage
 case class Place(name: String, location: Location) extends SystemMessage

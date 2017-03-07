@@ -1,7 +1,7 @@
-package com.example
+package com.dvisagie
 
-import com.example.actors.SystemActor
-import com.example.models._
+import com.dvisagie.actors.SystemActor
+import com.dvisagie.models._
 import akka.actor.ActorSystem
 
 

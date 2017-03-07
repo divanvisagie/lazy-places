@@ -1,9 +1,9 @@
-package com.example.actors
+package com.dvisagie.actors
 
 import akka.actor.{Actor, Props}
 import akka.event.Logging
-import com.example.models.{Place, Result}
-import com.example.services.Messenger
+import com.dvisagie.models.{Place, Result}
+import com.dvisagie.services.Messenger
 
 
 class ResultProcessorActor extends Actor {

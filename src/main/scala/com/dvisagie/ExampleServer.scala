@@ -1,10 +1,10 @@
-package com.example
+package com.dvisagie
 
 import com.twitter.finagle.http.{Response, Request}
 import com.twitter.finatra.http.HttpServer
 import com.twitter.finatra.http.filters.{CommonFilters, LoggingMDCFilter, TraceIdMDCFilter}
 import com.twitter.finatra.http.routing.HttpRouter
-import com.example.modules.PlacesModule
+import com.dvisagie.modules.PlacesModule
 
 object ExampleServerMain extends ExampleServer
 

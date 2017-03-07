@@ -1,4 +1,4 @@
-package com.example
+package com.dvisagie
 
 object ApiSettings {
   def secret : String = {

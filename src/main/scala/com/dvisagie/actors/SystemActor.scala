@@ -1,9 +1,9 @@
-package com.example.actors
+package com.dvisagie.actors
 
 import akka.actor.{Actor, Props}
 import akka.event.Logging
-import com.example.models.{Location, PlaceListResult}
-import com.example.services.HttpService
+import com.dvisagie.models.{Location, PlaceListResult}
+import com.dvisagie.services.HttpService
 
 class PlaceFinder  {
   var httpService = HttpService()

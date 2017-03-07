@@ -1,4 +1,4 @@
-package com.example
+package com.dvisagie
 
 import com.twitter.finagle.http.Request
 import com.twitter.finatra.http.Controller
